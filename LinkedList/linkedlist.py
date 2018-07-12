@@ -157,7 +157,6 @@ append(linkedlist, 5)
 append(linkedlist, 5)
 append(linkedlist, 9)
 linkedlist = insert_first(linkedlist, 11)
-
 linkedlist = delete_first(linkedlist)
 print(linkedlist)
 delete_last(linkedlist)
