@@ -60,37 +60,52 @@ def is_empty():
 
 
 def delete_by_id(linkedlist, element_id):
-    assert is_empty() == False
+    assert is_empty() is False
     p = linkedlist
     while id(p[1]) != element_id:
         p = p[1]
-    p[1] = p[1][1]
+    try:
+        p[1] = p[1][1]
+    except TypeError:
+        print('This element does not exist!')
+        return False
+    return True
 
 
 def delete_first(linkedlist):
-    assert is_empty() == False
+    assert is_empty() is False
     linkedlist = linkedlist[1]
     return linkedlist
 
 
 def delete_after(linkedlist, element):
-    assert is_empty() == False
+    assert is_empty() is False
     p = linkedlist
     while p[0] != element:
         p = p[1]
-    p[1] = p[1][1]
+    try:
+        p[1] = p[1][1]
+    except TypeError:
+        print('This element does not exist!')
+        return False
+    return True
 
 
 def delete_before(linkedlist, element):
-    assert is_empty() == False
+    assert is_empty() is False
     p = linkedlist
     while p[1][1][0] != element:
         p = p[1]
-    p[1] = p[1][1]
+    try:
+        p[1] = p[1][1]
+    except TypeError:
+        print('This element does not exist!')
+        return False
+    return True
 
 
 def delete_last(linkedlist):
-    assert is_empty() == False
+    assert is_empty() is False
     p = linkedlist
     ind = index-1
     while ind != 0:
